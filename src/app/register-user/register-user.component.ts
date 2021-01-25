@@ -32,7 +32,6 @@ export class RegisterUserComponent implements OnInit {
       userId: ['', [Validators.required, Validators.pattern('^[A-Za-z0-9]+$')]]
     });
     this.userEdit = this.manageService.editUserData;
-    console.log(this.userEdit);
     if (this.userEdit) {
       this.fillUser();
     }
