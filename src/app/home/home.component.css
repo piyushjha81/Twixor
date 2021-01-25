@@ -1,0 +1,11 @@
+.mat-card-body-content{
+  background: transparent;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+}
+
+.align-middle {
+  padding-left: 20%;
+  padding-right: 20%;
+}

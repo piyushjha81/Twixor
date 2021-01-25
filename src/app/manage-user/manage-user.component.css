@@ -1,0 +1,8 @@
+.disable-color {
+  background-color: #ddd;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+.pointer{
+  cursor: pointer;
+}

@@ -1,0 +1,33 @@
+  <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="table-responsive">
+          <table class="table table-striped">
+              <thead class="header-background">
+                  <tr class="table-style">
+                      <th>First Name</th>
+                      <th>Middle Name</th>
+                      <th>Last Name</th>
+                      <th>User ID</th>
+                      <th>Email ID</th>
+                      <th>Phone No</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr class="white-txt" *ngFor="let item of stdArrList; let i=index">
+                      <td>{{item.name}}</td>
+                      <td>{{item.middleName}}</td>
+                      <td>{{item.lastName}}</td>
+                      <td>{{item.userId}}</td>
+                      <td>{{item.email}}</td>
+                      <td>{{item.mobileNo}}</td>
+                      <td>
+                          <span class="material-icons pointer" aria-hidden="true" matTooltip="Edit"
+                              (click)="editDetails(item)">create</span>
+                          <span class="material-icons pointer" aria-hidden="true" matTooltip="Delete"
+                              (click)="deleteRow(item)">delete</span>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>

@@ -1,0 +1,60 @@
+<mat-card class="mat-card-body-content">
+  <form [formGroup]="regForm">
+    <mat-card-content>
+      <div class="form-group">
+        <mat-form-field class="col-xs-12 col-sm-6 col-md-4" color="accent" floatLabel="always">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="" formControlName="name" name="name" required>
+          <mat-error class="error" *ngIf="regForm.get('name').hasError('required')">
+            This is required </mat-error>
+          <mat-error class="error" *ngIf="regForm.get('name').hasError('pattern')">
+            Name is invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-xs-12 col-sm-6 col-md-4" color="accent" floatLabel="always">
+          <mat-label>Middle Name</mat-label>
+          <input matInput placeholder="" formControlName="middleName" name="name">
+          <mat-error class="error" *ngIf="regForm.get('middleName').hasError('pattern')">
+            Name is invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-xs-12 col-sm-6 col-md-4" color="accent" floatLabel="always">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="" formControlName="lastName" name="name" required>
+          <mat-error class="error" *ngIf="regForm.get('lastName').hasError('required')">
+            This is required </mat-error>
+          <mat-error class="error" *ngIf="regForm.get('lastName').hasError('pattern')">
+            Name is invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-xs-12 col-sm-6 col-md-4" color="accent" floatLabel="always">
+          <mat-label>User Id</mat-label>
+          <input matInput placeholder="" formControlName="userId" name="name" required [readonly]="userEdit !== undefined">
+          <mat-error class="error" *ngIf="regForm.get('userId').hasError('required')">
+            This is required </mat-error>
+          <mat-error class="error" *ngIf="regForm.get('userId').hasError('pattern')">
+            Name is invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-xs-12 col-sm-6 col-md-4" color="accent" floatLabel="always">
+          <mat-label>Email ID</mat-label>
+          <input matInput placeholder="" formControlName="email" name="email" required>
+          <mat-error class="error" *ngIf="regForm.get('email').hasError('required')">
+            This is required </mat-error>
+          <mat-error class="error" *ngIf="regForm.get('email').hasError('pattern')">
+            Email is Invalid</mat-error>
+        </mat-form-field>
+        <mat-form-field class="col-xs-12 col-sm-6 col-md-4" color="accent" floatLabel="always">
+          <mat-label>Phone Number</mat-label>
+          <input matInput placeholder="" formControlName="mobileNo" name="mobNo" pattern="^[6-9]\d{9}$" maxlength="10"
+            required>
+          <mat-error class="error" *ngIf="regForm.get('mobileNo').hasError('required')">
+            This is required
+          </mat-error>
+          <mat-error class="error" *ngIf="regForm.get('mobileNo').hasError('pattern')">
+            Mobile No is Invalid</mat-error>
+        </mat-form-field>
+        <mat-divider></mat-divider>
+        <mat-list>
+          <mat-list-item class="error">Note: Please fill all mandatory fields</mat-list-item>
+        </mat-list>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <button type="button" mat-raised-button color="accent" (click)="addUser(regForm.getRawValue())" [disabled]="regForm.invalid">Submit</button>
+        </div>
+      </div>
